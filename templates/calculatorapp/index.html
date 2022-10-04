@@ -32,6 +32,7 @@
                     console.log('success');
                     $("#txtDisplay").val(response);
                     equationArray = [];
+                    currentNumber = response;
                 },
                 error: function (response) {
                     // Request error. Display right error message
@@ -57,20 +58,27 @@
             }
             else {
                 operator = value;
-                equationArray.push(currentNumber);
-                currentNumber = '';
 
-                if (operator == "AC") {
-                    equationArray = [];
+                if (currentNumber != '') {                    
+                    //if equationArray[len(equationArray) - 1].isnumeric
+                    equationArray.push(currentNumber);
                     currentNumber = '';
-                    $("#txtDisplay").val(currentNumber);
+
+                    if (operator == "AC") {
+                        equationArray = [];
+                        currentNumber = '';
+                        $("#txtDisplay").val(currentNumber);
+                    }
+                    else if (operator == "=") {                              
+                        calculate();
+                    }
+                    else {                    
+                        equationArray.push(value);
+                    }    
+
                 }
-                else if (operator == "=") {                              
-                    calculate();
-                }
-                else {                    
-                    equationArray.push(value);
-                }                                
+
+                                 
             }
             console.log("Array is: " + equationArray);
         });
@@ -156,7 +164,7 @@
                         <button type="button" class="btnCalc btnNumber btn btn-secondary w-100" value="0">0</button>
                     </td>                    
                     <td>
-                        <button type="button" class="btnCalc btn btn-secondary w-100" value=".">.</button>
+                        <button type="button" class="btnCalc btnNumber btn btn-secondary w-100" value=".">.</button>
                     </td>
                     <td>
                         <button type="button" class="btnCalc btn btn-warning w-100" value="=">=</button>

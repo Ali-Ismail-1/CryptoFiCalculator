@@ -1,3 +1,4 @@
+from operator import eq
 from django.shortcuts import render
 from django.views.decorators.http import require_GET
 from django.http import HttpResponse
@@ -22,5 +23,35 @@ def calc(request):
     for x in equationArray:
         print(x)
 
+    total = float(equationArray[0])
+    operator = ''
+    current = 0
+    for i in range(1, len(equationArray), 1):
+        equationArray[i]
+        if(equationArray[i].isnumeric() == False):
+            operator = equationArray[i]
+        elif (operator != ''):
+            
+            current = float(equationArray[i])
+            print(current)
+                
+
+            if (operator == "+"):
+                total += current
+            elif (operator == "-"):
+                total -= current
+            elif (operator == "x"):
+                total *= current
+            elif (operator == "/"):                
+                if current == 0: # handle divide by zero
+                    total = 0
+                else:
+                    total /= current
+            elif (operator == "FLIP"):
+                total *= -1
+            operator = ''
+            
     
-    return HttpResponse('10')
+
+
+    return HttpResponse(str(total))
