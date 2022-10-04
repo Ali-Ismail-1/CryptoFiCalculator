@@ -17,15 +17,16 @@
         console.log("Hello world, jQuery is online")
 
         function calculate() {
-            console.log("call ajax and calculate");
-            
-            //currentNumber = '100';
-            //$("#txtDisplay").val(currentNumber);
+            console.log("call ajax and calculate");                        
 
             $.ajax({
                 url: "calc",
                 method : "GET",            
-                data : {'test': 'test'},            
+                //data : {'test': 'test'},            
+                data : { 'equationArray' : equationArray},
+                data : { 'equationArray' : equationArray, 
+                        'equatoinArrayJSON' : JSON.stringify(equationArray)
+                },
                 success: function (response) {
                     // Do some success scripts
                     console.log('success');
