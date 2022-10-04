@@ -34,7 +34,7 @@ git clone https://github.com/Ali-Ismail-1/CryptoFiCalculator.git
 #### Install django if you do not have it already 
 pip install django==3.2.15
 
-#### Open the folder CryptoFiCalculator and runt he following command to start the server:
+#### Open the folder CryptoFiCalculator and run the following command to start the server:
 python .\manage.py runserver
 
 #### View the Calculator app using the following url:
