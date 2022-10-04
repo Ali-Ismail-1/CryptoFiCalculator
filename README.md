@@ -45,12 +45,12 @@ http://127.0.0.1:8000/calculatorapp/
 # Reproduction
 
 ## Just in case you want to follow my set up steps from scratch, here's the commands I used in my terminal
-django-admin startproject CryptoFiCalculator
-pip install virtualenv
-virtualenv myenv
-myenv\Scripts\activate
-pip install django
-python .\manage.py startapp calculatorapp
-python .\manage.py migrate
-pip freeze > requirements.txt
-python .\manage.py runserver
+- django-admin startproject CryptoFiCalculator
+- pip install virtualenv
+- virtualenv myenv
+- myenv\Scripts\activate
+- pip install django
+- python .\manage.py startapp calculatorapp
+- python .\manage.py migrate
+- pip freeze > requirements.txt
+- python .\manage.py runserver
