@@ -17,11 +17,11 @@ The GET request will make the calculation and send the result back to the html p
 ## Requirements
 
 ### You will need the following packages to run the solution, 
-asgiref==3.5.2
-Django==3.2.15
-pytz==2022.4
-sqlparse==0.4.3
-typing_extensions==4.3.0
+- asgiref==3.5.2
+- Django==3.2.15
+- pytz==2022.4
+- sqlparse==0.4.3
+- typing_extensions==4.3.0
 
 
 ## Setup
