@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+
+
+
+       $(document).ready(function() {
+          console.log("Hello world, jQuery is online")
+
+        $(".btnCalc").click(function() {
+            var value = $(this).val();
+            console.log(value);
+        });
+
+
+       });
+    </script>
   </head>
   <body>
     <h1>CryptoFi Calculator App!</h1>
@@ -18,75 +34,75 @@
                 </tr>
                 <tr>                    
                     <td>
-                        <button type="button" class="btn btn-dark w-100" value="AC">AC</button>
+                        <button type="button" class="btnCalc btn btn-dark w-100" value="AC">AC</button>
                     </td>                    
                     <td>
-                        <button type="button" class="btn btn-dark w-100" value="FLIP">+/-</button>
+                        <button type="button" class="btnCalc btn btn-dark w-100" value="FLIP">+/-</button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-dark w-100" value="%">%</button>
+                        <button type="button" class="btnCalc btn btn-dark w-100" value="%">%</button>
                     </td>                    
                     <td>
-                        <button type="button" class="btn btn-warning w-100" value="/">/</button>
+                        <button type="button" class="btnCalc btn btn-warning w-100" value="/">/</button>
                     </td>
                 </tr>
 
                 <tr>                    
                     <td>
-                        <button type="button" class="btn btn-secondary w-100" value="7">7</button>
+                        <button type="button" class="btnCalc btn btn-secondary w-100" value="7">7</button>
                     </td>                    
                     <td>
-                        <button type="button" class="btn btn-secondary w-100" value="8">8</button>
+                        <button type="button" class="btnCalc btn btn-secondary w-100" value="8">8</button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-secondary w-100" value="9">9</button>
+                        <button type="button" class="btnCalc btn btn-secondary w-100" value="9">9</button>
                     </td>                    
                     <td>
-                        <button type="button" class="btn btn-warning w-100" value="x">x</button>
-                    </td>
-                </tr>
-
-
-                <tr>                    
-                    <td>
-                        <button type="button" class="btn btn-secondary w-100" value="4">4</button>
-                    </td>                    
-                    <td>
-                        <button type="button" class="btn btn-secondary w-100" value="5">5</button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-secondary w-100" value="6">6</button>
-                    </td>                    
-                    <td>
-                        <button type="button" class="btn btn-warning w-100" value="-">-</button>
+                        <button type="button" class="btnCalc btn btn-warning w-100" value="x">x</button>
                     </td>
                 </tr>
 
 
                 <tr>                    
                     <td>
-                        <button type="button" class="btn btn-secondary w-100" value="1">1</button>
+                        <button type="button" class="btnCalc btn btn-secondary w-100" value="4">4</button>
                     </td>                    
                     <td>
-                        <button type="button" class="btn btn-secondary w-100" value="2">2</button>
+                        <button type="button" class="btnCalc btn btn-secondary w-100" value="5">5</button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-secondary w-100" value="3">3</button>
+                        <button type="button" class="btnCalc btn btn-secondary w-100" value="6">6</button>
                     </td>                    
                     <td>
-                        <button type="button" class="btn btn-warning w-100" value="x">+</button>
+                        <button type="button" class="btnCalc btn btn-warning w-100" value="-">-</button>
+                    </td>
+                </tr>
+
+
+                <tr>                    
+                    <td>
+                        <button type="button" class="btnCalc btn btn-secondary w-100" value="1">1</button>
+                    </td>                    
+                    <td>
+                        <button type="button" class="btnCalc btn btn-secondary w-100" value="2">2</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btnCalc btn btn-secondary w-100" value="3">3</button>
+                    </td>                    
+                    <td>
+                        <button type="button" class="btnCalc btn btn-warning w-100" value="x">+</button>
                     </td>
                 </tr>
 
                 <tr>                    
                     <td colspan="2">
-                        <button type="button" class="btn btn-secondary w-100" value="0">0</button>
+                        <button type="button" class="btnCalc btn btn-secondary w-100" value="0">0</button>
                     </td>                    
                     <td>
-                        <button type="button" class="btn btn-secondary w-100" value=".">.</button>
+                        <button type="button" class="btnCalc btn btn-secondary w-100" value=".">.</button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-warning w-100" value="=">=</button>
+                        <button type="button" class="btnCalc btn btn-warning w-100" value="=">=</button>
                     </td>                                        
                 </tr>
               
