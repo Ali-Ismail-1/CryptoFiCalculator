@@ -13,6 +13,7 @@
        $(document).ready(function() {
         var equationArray = [];
         var operator = false;
+        var lastOperator = ''        
         var currentNumber = ''
         console.log("Hello world, jQuery is online")
 
@@ -30,6 +31,9 @@
                 success: function (response) {
                     // Do some success scripts
                     console.log('success');
+                    if (response % 1 === 0) {
+                        response = parseInt(response); 
+                    }
                     $("#txtDisplay").val(response);
                     equationArray = [];
                     currentNumber = response;
@@ -58,29 +62,34 @@
             }
             else {
                 operator = value;
-
-                if (currentNumber != '') {                    
-                    //if equationArray[len(equationArray) - 1].isnumeric
-                    equationArray.push(currentNumber);
-                    currentNumber = '';
-
-                    if (operator == "AC") {
+                if (operator == "AC") {
                         equationArray = [];
                         currentNumber = '';
                         $("#txtDisplay").val(currentNumber);
                     }
-                    else if (operator == "=") {                              
-                        calculate();
-                    }
-                    else {                    
-                        equationArray.push(value);
-                    }    
-
+                else if (operator == "=") {                              
+                    equationArray.push(currentNumber);
+                    calculate();
                 }
-
-                                 
+                else if (operator == "FLIP") {
+                    currentNumber *= -1;
+                    $("#txtDisplay").val(currentNumber);
+                }
+                else if (operator == "%"){
+                    currentNumber /= 100;
+                    $("#txtDisplay").val(currentNumber);
+                }
+                else if (currentNumber == ''){                    
+                    equationArray.pop();
+                    equationArray.push(value);                    
+                }
+                else {
+                    equationArray.push(currentNumber);
+                    equationArray.push(operator);
+                    currentNumber = '';
+                }                                                 
             }
-            console.log("Array is: " + equationArray);
+            console.log("Array is: " + equationArray + " CurrentNumber is: " + currentNumber);
         });
 
 
