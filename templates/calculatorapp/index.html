@@ -14,7 +14,30 @@
         var equationArray = [];
         var operator = false;
         var currentNumber = ''
-          console.log("Hello world, jQuery is online")
+        console.log("Hello world, jQuery is online")
+
+        function calculate() {
+            console.log("call ajax and calculate");
+            
+            //currentNumber = '100';
+            //$("#txtDisplay").val(currentNumber);
+
+            $.ajax({
+                url: "calculatorapp/calculate",
+                method : "GET",            
+                data : {'test': 'test'},            
+                success: function (response) {
+                    // Do some success scripts
+                    console.log('success');
+                    console.log(response);
+                    equationArray = [];
+                },
+                error: function (response) {
+                    // Request error. Display right error message
+                    console.log('error');                            
+                },
+            });            
+        }
 
         $(".btnCalc").click(function() {
             var value = $(this).val();
@@ -37,6 +60,9 @@
                     equationArray = [];
                     currentNumber = '';
                     $("#txtDisplay").val(currentNumber);
+                }
+                else if (operator == "=") {
+                    calculate();
                 }
                 else {
                     equationArray.push(currentNumber);
