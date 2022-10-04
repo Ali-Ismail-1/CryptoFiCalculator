@@ -16,7 +16,7 @@ The GET request will make the calculation and send the result back to the html p
 
 ## Requirements
 
-### You will need the following packages to run the solution, 
+### You will need the following packages to run the solution: 
 - asgiref==3.5.2
 - Django==3.2.15
 - pytz==2022.4
