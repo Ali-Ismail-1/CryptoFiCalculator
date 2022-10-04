@@ -23,13 +23,13 @@
             //$("#txtDisplay").val(currentNumber);
 
             $.ajax({
-                url: "calculatorapp/calculate",
+                url: "calc",
                 method : "GET",            
                 data : {'test': 'test'},            
                 success: function (response) {
                     // Do some success scripts
                     console.log('success');
-                    console.log(response);
+                    $("#txtDisplay").val(response);
                     equationArray = [];
                 },
                 error: function (response) {
@@ -50,23 +50,24 @@
                 else {
                     currentNumber += value;
                 }
-                $("#txtDisplay").val(currentNumber);
+                $("#txtDisplay").val(currentNumber);                
                 //console.log("current Number: " + currentNumber);
 
             }
             else {
                 operator = value;
+                equationArray.push(currentNumber);
+                currentNumber = '';
+
                 if (operator == "AC") {
                     equationArray = [];
                     currentNumber = '';
                     $("#txtDisplay").val(currentNumber);
                 }
-                else if (operator == "=") {
+                else if (operator == "=") {                              
                     calculate();
                 }
-                else {
-                    equationArray.push(currentNumber);
-                    currentNumber = '';
+                else {                    
                     equationArray.push(value);
                 }                                
             }
@@ -145,7 +146,7 @@
                         <button type="button" class="btnCalc btnNumber btn btn-secondary w-100" value="3">3</button>
                     </td>                    
                     <td>
-                        <button type="button" class="btnCalc btn btn-warning w-100" value="x">+</button>
+                        <button type="button" class="btnCalc btn btn-warning w-100" value="+">+</button>
                     </td>
                 </tr>
 
